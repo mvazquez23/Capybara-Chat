@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Capybara Chat</title>
+  <link rel="stylesheet" href="styles.css" />
+  <script defer src="script.js"></script>
+</head>
+<body>
+  <div id="login-screen" class="screen">
+    <h2>Iniciar Sesión</h2>
+    <input type="text" id="username" placeholder="Usuario" />
+    <input type="password" id="password" placeholder="Contraseña" />
+    <button onclick="login()">Entrar</button>
+  </div>
+
+  <div id="chat-screen" class="screen hidden">
+    <header>
+      <img src="capybara.jpg" alt="Capibara" />
+      <h1>Capybara Chat</h1>
+    </header>
+
+    <main>
+      <div id="chat-window"></div>
+      <div class="input-area">
+        <input type="text" id="message-input" placeholder="Escribí tu mensaje..." />
+        <button onclick="sendMessage()">📤</button>
+        <div class="tools">
+          <button onclick="getLocation()">📍</button>
+          <button onclick="toggleNote()">📝</button>
+          <button onclick="toggleDate()">📅</button>
+        </div>
+      </div>
+    </main>
+
+    <div id="note-box" class="tool-box hidden">
+      <textarea id="notes" placeholder="Escribí una nota..." oninput="saveNotes()"></textarea>
+    </div>
+
+    <div id="date-box" class="tool-box hidden">
+      <input type="date" id="important-date" onchange="saveDate()" />
+    </div>
+  </div>
+</body>
+</html>
